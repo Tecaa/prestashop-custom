@@ -24,7 +24,7 @@
  *}
 <div id="_desktop_contact_link">
   <div id="contact-link">
-    {if $contact_infos.phone}
+    {if false && $contact_infos.phone}
       {* [1][/1] is for a HTML tag. *}
       {l
         s='Call us: [1]%phone%[/1]'
@@ -35,8 +35,14 @@
         ]
         d='Shop.Theme.Global'
       }
-    {else}
+    {else if false}
       <a href="{$urls.pages.contact}">{l s='Contact us' d='Shop.Theme.Global'}</a>
+    
+    {else}
+<a href="https://www.instagram.com/tienda.hilarte/" title="¡Visita nuestro Instagram!" target="_blank"> 
+	<img src="https://i.imgur.com/XQ5H8yb.jpg" width="30px">
+		@tienda.hilarte
+	</a>
     {/if}
   </div>
 </div>
