@@ -48,7 +48,8 @@
                 title="{$link.description}"
                 {if !empty($link.target)} target="{$link.target}" {/if}
             >
-              {$link.title}
+              {$link.title|unescape: 'html' nofilter}
+	<!-- CAMBIO -->
             </a>
           </li>
         {/foreach}
