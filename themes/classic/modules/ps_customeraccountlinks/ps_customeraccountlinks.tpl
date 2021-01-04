@@ -40,11 +40,13 @@
   </div>
   <ul class="account-list collapse" id="footer_account_list">
     {foreach from=$my_account_urls item=my_account_url}
+	{if !$my_account_url.url|strstr: "facturas-abono"}
         <li>
           <a href="{$my_account_url.url}" title="{$my_account_url.title}" rel="nofollow">
             {$my_account_url.title}
           </a>
         </li>
+	{/if}
     {/foreach}
     {hook h='displayMyAccountBlock'}
 	</ul>
