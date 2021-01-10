@@ -1,0 +1,9 @@
+var/cache/
+var/logs/
+config/xml
+vendor/
+img/
+administration/themes/
+modules/
+src/Core/
+administration/filemanager/ 
