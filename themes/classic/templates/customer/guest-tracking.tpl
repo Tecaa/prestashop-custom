@@ -43,7 +43,7 @@
         <ul>
           <li> -{l s='Personalized and secure access' d='Shop.Theme.Customeraccount'}</li>
           <li> -{l s='Fast and easy checkout' d='Shop.Theme.Customeraccount'}</li>
-          <li> -{l s='Easier merchandise return' d='Shop.Theme.Customeraccount'}</li>
+          <!--<li> -{l s='Easier merchandise return' d='Shop.Theme.Customeraccount'}</li>-->
         </ul>
       </header>
 
