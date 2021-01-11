@@ -86,6 +86,7 @@ final class CustomerFormDataProvider implements FormDataProviderInterface
 
         $data = [
             'gender_id' => $editableCustomer->getGenderId(),
+            'rut' => $editableCustomer->getRut(),
             'first_name' => $editableCustomer->getFirstName()->getValue(),
             'last_name' => $editableCustomer->getLastName()->getValue(),
             'email' => $editableCustomer->getEmail()->getValue(),

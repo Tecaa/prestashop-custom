@@ -184,6 +184,7 @@ final class GetCustomerForViewingHandler implements GetCustomerForViewingHandler
         );
 
         return new PersonalInformation(
+            $customer->rut,
             $customer->firstname,
             $customer->lastname,
             $customer->email,

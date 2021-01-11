@@ -50,6 +50,10 @@ class EditableCustomer
     /**
      * @var string
      */
+    private $rut;
+    /**
+     * @var string
+     */
     private $firstName;
 
     /**
@@ -150,6 +154,7 @@ class EditableCustomer
     public function __construct(
         CustomerId $customerId,
         $genderId,
+        $rut,
         FirstName $firstName,
         LastName $lastName,
         Email $email,
@@ -169,6 +174,7 @@ class EditableCustomer
     ) {
         $this->customerId = $customerId;
         $this->genderId = $genderId;
+        $this->rut = $rut;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->email = $email;
@@ -202,7 +208,13 @@ class EditableCustomer
     {
         return $this->genderId;
     }
-
+ /**
+     * @return Rut
+     */
+    public function getRut()
+    {
+        return $this->rut;
+    }
     /**
      * @return FirstName
      */

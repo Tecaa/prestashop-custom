@@ -50,6 +50,10 @@ class EditCustomerCommand
     private $customerId;
 
     /**
+     * @var Rut|null
+     */
+    private $rut;
+    /**
      * @var FirstName|null
      */
     private $firstName;
@@ -155,6 +159,24 @@ class EditCustomerCommand
         return $this->customerId;
     }
 
+    /**
+     * @return FirstName|null
+     */
+    public function getRut()
+    {
+        return $this->rut;
+    }
+    /**
+     * @param string $rut
+     *
+     * @return self
+     */
+    public function setRut($rut)
+    {
+        $this->rut = rut;
+
+        return $this;
+    }
     /**
      * @return FirstName|null
      */

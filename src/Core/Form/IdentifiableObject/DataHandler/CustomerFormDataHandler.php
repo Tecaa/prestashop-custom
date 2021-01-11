@@ -102,6 +102,7 @@ final class CustomerFormDataHandler implements FormDataHandlerInterface
         }, $data['group_ids']);
 
         $command = new AddCustomerCommand(
+            $data['rut'],
             $data['first_name'],
             $data['last_name'],
             $data['email'],
@@ -147,6 +148,7 @@ final class CustomerFormDataHandler implements FormDataHandlerInterface
         $command = (new EditCustomerCommand($customerId))
             ->setGenderId($data['gender_id'])
             ->setEmail($data['email'])
+            ->setRut($data['rut'])
             ->setFirstName($data['first_name'])
             ->setLastName($data['last_name'])
             ->setIsEnabled($data['is_enabled'])

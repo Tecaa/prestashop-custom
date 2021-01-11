@@ -47,6 +47,24 @@
   <div class="card-body">
     <div class="row mb-1">
       <div class="col-4 text-right">
+        {{ 'Rut'|trans({}, 'Admin.Global') }}
+      </div>
+      <div class="col-8">
+        {{ customerInformation.personalInformation.rut }}
+      </div>
+    </div>
+    
+    <div class="row mb-1">
+      <div class="col-4 text-right">
+        {{ 'Nombre'|trans({}, 'Admin.Global') }}
+      </div>
+      <div class="col-8">
+        {{ customerInformation.personalInformation.firstName }}
+        {{ customerInformation.personalInformation.lastName }}
+      </div>
+    </div>
+    <div class="row mb-1">
+      <div class="col-4 text-right">
         {{ 'Social Title'|trans({}, 'Admin.Global') }}
       </div>
       <div class="col-8">

@@ -34,6 +34,10 @@ class PersonalInformation
     /**
      * @var string
      */
+    private $rut;
+    /**
+     * @var string
+     */
     private $firstName;
 
     /**
@@ -118,6 +122,7 @@ class PersonalInformation
      * @param bool $isActive
      */
     public function __construct(
+        $rut,
         $firstName,
         $lastName,
         $email,
@@ -133,6 +138,7 @@ class PersonalInformation
         Subscriptions $subscriptions,
         $isActive
     ) {
+        $this->rut = $rut;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->email = $email;
@@ -149,6 +155,13 @@ class PersonalInformation
         $this->isActive = $isActive;
     }
 
+    /**
+     * @return string
+     */
+    public function getRut()
+    {
+        return $this->rut;
+    }
     /**
      * @return string
      */
