@@ -73,7 +73,6 @@ final class CustomerGridDataFactoryDecorator implements GridDataFactoryInterface
     public function getData(SearchCriteriaInterface $searchCriteria)
     {
         $customerData = $this->customerDoctrineGridDataFactory->getData($searchCriteria);
-
         $customerRecords = $this->applyModifications($customerData->getRecords());
 
         return new GridData(
@@ -95,6 +94,10 @@ final class CustomerGridDataFactoryDecorator implements GridDataFactoryInterface
         foreach ($customers as $customer) {
             if (empty($customer['social_title'])) {
                 $customer['social_title'] = '--';
+            }
+
+            if (empty($customer['rut'])) {
+                $customer['rut'] = '';
             }
 
             if (null === $customer['company']) {

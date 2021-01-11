@@ -451,6 +451,18 @@ class ValidateCore
         return empty($name) || preg_match(Tools::cleanNonUnicodeSupport('/^[^<>={}]*$/u'), $name);
     }
 
+      /**
+     * Check for standard name validity.
+     *
+     * @param string $name Name to validate
+     *
+     * @return bool Validity is ok or not
+     */
+    public static function isRut($name)
+    {
+        return empty($name) || preg_match(Tools::cleanNonUnicodeSupport('/^(\d{1,3}(?:\.\d{1,3}){2}-[\dkK])$/u'), $name);
+    }
+
     /**
      * Check for HTML field validity (no XSS please !).
      *

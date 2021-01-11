@@ -127,6 +127,13 @@ final class CustomerGridDefinitionFactory extends AbstractGridDefinitionFactory
                 ])
             )
             ->add(
+                (new DataColumn('rut'))
+                ->setName($this->trans('Rut', [], 'Admin.Global'))
+                ->setOptions([
+                    'field' => 'rut',
+                ])
+            )
+            ->add(
                 (new DataColumn('social_title'))
                 ->setName($this->trans('Social title', [], 'Admin.Global'))
                 ->setOptions([
@@ -283,6 +290,16 @@ final class CustomerGridDefinitionFactory extends AbstractGridDefinitionFactory
                     'required' => false,
                 ])
                 ->setAssociatedColumn('id_customer')
+            )
+            ->add(
+                (new Filter('rut', TextType::class))
+                ->setTypeOptions([
+                    'attr' => [
+                        'placeholder' => $this->trans('Search rut', [], 'Admin.Actions'),
+                    ],
+                    'required' => false,
+                ])
+                ->setAssociatedColumn('rut')
             )
             ->add(
                 (new Filter('social_title', ChoiceType::class))

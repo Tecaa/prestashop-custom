@@ -695,6 +695,7 @@ class CustomerController extends AbstractAdminController
 
         $headers = [
             'id_customer' => $this->trans('ID', 'Admin.Global'),
+            'rut' => $this->trans('Rut', 'Admin.Global'),
             'social_title' => $this->trans('Social title', 'Admin.Global'),
             'firstname' => $this->trans('First name', 'Admin.Global'),
             'lastname' => $this->trans('Last name', 'Admin.Global'),
@@ -713,6 +714,7 @@ class CustomerController extends AbstractAdminController
         foreach ($grid->getData()->getRecords()->all() as $record) {
             $data[] = [
                 'id_customer' => $record['id_customer'],
+                'rut' => '--' === $record['rut'] ? '' : $record['rut'],
                 'social_title' => '--' === $record['social_title'] ? '' : $record['social_title'],
                 'firstname' => $record['firstname'],
                 'lastname' => $record['lastname'],

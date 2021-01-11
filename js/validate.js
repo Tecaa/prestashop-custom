@@ -117,6 +117,12 @@ function validate_isGenericName(s)
 	return reg.test(s);
 }
 
+function validate_isRut(s)
+{
+	var reg = /^(\d{1,3}(?:\.\d{1,3}){2}-[\dkK])$/;
+	return reg.test(s);
+}
+
 function validate_isAddress(s)
 {
 	var reg = /^[^!<>?=+@{}_$%]+$/;

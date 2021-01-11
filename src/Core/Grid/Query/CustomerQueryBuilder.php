@@ -77,7 +77,7 @@ final class CustomerQueryBuilder extends AbstractDoctrineQueryBuilder
     public function getSearchQueryBuilder(SearchCriteriaInterface $searchCriteria)
     {
         $searchQueryBuilder = $this->getCustomerQueryBuilder($searchCriteria)
-            ->select('c.id_customer, c.firstname, c.lastname, c.email, c.active, c.newsletter, c.optin')
+            ->select('c.id_customer, c.rut, c.firstname, c.lastname, c.email, c.active, c.newsletter, c.optin')
             ->addSelect('c.date_add, gl.name as social_title, s.name as shop_name, c.company');
 
         $this->appendTotalSpentQuery($searchQueryBuilder);
@@ -178,6 +178,7 @@ final class CustomerQueryBuilder extends AbstractDoctrineQueryBuilder
     {
         $allowedFilters = [
             'id_customer',
+            'rut',
             'social_title',
             'firstname',
             'lastname',
@@ -196,6 +197,13 @@ final class CustomerQueryBuilder extends AbstractDoctrineQueryBuilder
 
             if (in_array($filterName, ['active', 'newsletter', 'optin', 'id_customer'])) {
                 $qb->andWhere('c.`' . $filterName . '` = :' . $filterName);
+                $qb->setParameter($filterName, $filterValue);
+
+                continue;
+            }
+
+            if ('rut' === $filterName) {
+                $qb->andWhere('c.rut = :' . $filterName);
                 $qb->setParameter($filterName, $filterValue);
 
                 continue;

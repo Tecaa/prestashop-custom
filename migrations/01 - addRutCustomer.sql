@@ -1,0 +1,1 @@
+ALTER TABLE ps_customer add column rut varchar(12) not null;
