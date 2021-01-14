@@ -39,6 +39,9 @@
         <div class="card-text">
           {{ form_errors(customerForm) }}
 
+          {{ ps.form_group_row(customerForm.rut, {}, {
+            'label': 'Rut'|trans({}, 'Admin.Global')
+          }) }}
 
           {{ ps.form_group_row(customerForm.gender_id, {}, {
             'label': 'Social title'|trans({}, 'Admin.Global')

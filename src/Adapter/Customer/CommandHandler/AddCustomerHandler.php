@@ -125,6 +125,7 @@ final class AddCustomerHandler extends AbstractCustomerHandler implements AddCus
 
         $customer->firstname = $command->getFirstName()->getValue();
         $customer->lastname = $command->getLastName()->getValue();
+        $customer->rut = $command->getRut();
         $customer->email = $command->getEmail()->getValue();
         $customer->passwd = $hashedPassword;
         $customer->id_default_group = $command->getDefaultGroupId();

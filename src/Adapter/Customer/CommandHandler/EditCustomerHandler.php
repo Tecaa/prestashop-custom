@@ -141,6 +141,10 @@ final class EditCustomerHandler extends AbstractCustomerHandler implements EditC
             $customer->birthday = $command->getBirthday()->getValue();
         }
 
+        if (null !== $command->getRut()) {
+            $customer->rut = $command->getRut()->getValue();
+        }
+
         if (null !== $command->isEnabled()) {
             $customer->active = $command->isEnabled();
         }

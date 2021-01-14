@@ -113,6 +113,21 @@ class CustomerType extends AbstractType
                 'required' => false,
                 'placeholder' => null,
             ])
+            ->add('rut', TextType::class, [
+                'constraints' => [
+                    new NotBlank([
+                        'message' => $this->trans('This field cannot be empty', [], 'Admin.Notifications.Error'),
+                    ]),
+                    new Length([
+                        'max' => 12,
+                        'maxMessage' => $this->trans(
+                            'This field cannot be longer than %limit% characters',
+                            ['%limit%' => 12],
+                            'Admin.Notifications.Error'
+                        ),
+                    ]),
+                ],
+            ])
             ->add('first_name', TextType::class, [
                 'constraints' => [
                     new NotBlank([

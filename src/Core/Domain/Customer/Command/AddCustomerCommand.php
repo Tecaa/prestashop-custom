@@ -39,6 +39,10 @@ use PrestaShop\PrestaShop\Core\Domain\Customer\ValueObject\Password;
 class AddCustomerCommand
 {
     /**
+     * @var Rut
+     */
+    private $rut;
+    /**
      * @var FirstName
      */
     private $firstName;
@@ -142,6 +146,7 @@ class AddCustomerCommand
      * @param string|null $birthday
      */
     public function __construct(
+        $rut,
         $firstName,
         $lastName,
         $email,
@@ -154,6 +159,7 @@ class AddCustomerCommand
         $isPartnerOffersSubscribed = false,
         $birthday = null
     ) {
+        $this->rut = $rut;
         $this->firstName = new FirstName($firstName);
         $this->lastName = new LastName($lastName);
         $this->email = new Email($email);
@@ -167,6 +173,13 @@ class AddCustomerCommand
         $this->birthday = null !== $birthday ? new Birthday($birthday) : Birthday::createEmpty();
     }
 
+    /**
+     * @return Rut
+     */
+    public function getRut()
+    {
+        return $this->rut;
+    }
     /**
      * @return FirstName
      */
@@ -274,7 +287,17 @@ class AddCustomerCommand
 
         return $this;
     }
+  /**
+     * @param string $rut
+     *
+     * @return self
+     */
+    public function setRut($rut)
+    {
+        $this->rut = $rut;
 
+        return $this;
+    }
     /**
      * @return string|null
      */
