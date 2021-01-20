@@ -28,8 +28,10 @@
 				{$delivery_address}
 			{/if}
 		</td>
+		<!--
 		<td width="50%"><span class="bold">{l s='Billing Address' d='Shop.Pdf' pdf='true'}</span><br/><br/>
 				{$invoice_address}
 		</td>
+		-->
 	</tr>
 </table>
