@@ -40,7 +40,11 @@
 		<!-- <br /> {l s='(Tax excl.)' d='Shop.Pdf' pdf='true'}-->
 		</th>
 		<th class="product header small" width="{$layout.quantity.width}%">{l s='Qty' d='Shop.Pdf' pdf='true'}</th>
-		<th class="product header-right small" width="{$layout.total_tax_excl.width}%">{l s='Total' d='Shop.Pdf' pdf='true'} <br /> {l s='(Tax excl.)' d='Shop.Pdf' pdf='true'}</th>
+		<th class="product header-right small" width="{$layout.total_tax_excl.width}%">{l s='Total' d='Shop.Pdf' pdf='true'} <br /> 
+			{if false}
+				{l s='(Tax excl.)' d='Shop.Pdf' pdf='true'}
+			{/if}
+		</th>
 	</tr>
 	</thead>
 
